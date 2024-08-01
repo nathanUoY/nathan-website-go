@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -8,19 +9,14 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://nattyb7702:JzCKXdV0Y2URGjb2@moduledata.kk4pgdt.mongodb.net/cricket-stats', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
+mongoose.connect("mongodb+srv://nattyb7702:JzCKXdV0Y2URGjb2@moduledata.kk4pgdt.mongodb.net/test", {
+}).then(() => {
   console.log('Connected to MongoDB');
+}).catch((error) => {
+  console.error('Connection error:', error.message);
 });
 
-// Define schema and model for the modules
+// Define schema and models
 const moduleSchema = new mongoose.Schema({
   moduleCode: String,
   moduleName: String,
@@ -31,32 +27,6 @@ const moduleSchema = new mongoose.Schema({
 
 const Module = mongoose.model('Module', moduleSchema);
 
-app.get('/api/modules', async (req, res) => {
-  try {
-    const modules = await Module.find();
-    res.json(modules);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-app.post('/api/modules', async (req, res) => {
-  const module = new Module({
-    moduleCode: req.body.moduleCode,
-    moduleName: req.body.moduleName,
-    moduleMark: req.body.moduleMark,
-    mathsModule: req.body.mathsModule,
-    computingModule: req.body.computingModule
-  });
-  try {
-    const newModule = await module.save();
-    res.status(201).json(newModule);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
-// Define a schema and model for blog posts
 const blogSchema = new mongoose.Schema({
   heading: String,
   content: String,
@@ -66,12 +36,36 @@ const blogSchema = new mongoose.Schema({
 
 const Blog = mongoose.model('Blog', blogSchema);
 
-// Define API routes for blog posts
+// API routes for modules
+app.get('/api/modules', async (req, res) => {
+  console.log('Fetching modules');
+  try {
+    const modules = await Module.find();
+    res.json(modules);
+  } catch (err) {
+    console.error('Error fetching modules:', err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
+app.post('/api/modules', async (req, res) => {
+  const module = new Module(req.body);
+  try {
+    const newModule = await module.save();
+    res.status(201).json(newModule);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+// API routes for blog posts
 app.get('/blog-api/posts', async (req, res) => {
+  console.log('Fetching blog posts');
   try {
     const posts = await Blog.find();
     res.json(posts);
   } catch (err) {
+    console.error('Error fetching blog posts:', err);
     res.status(500).json({ message: err.message });
   }
 });
