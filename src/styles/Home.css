@@ -1,0 +1,38 @@
+.home {
+  padding: 20px;
+}
+
+.module-buttons {
+  margin-bottom: 20px;
+}
+
+.module-buttons button {
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: rgb(160, 101, 216);
+  color: white;
+}
+
+.module-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.module-card {
+  max-width: 800px;
+  min-width: 800px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #A5E68A;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}

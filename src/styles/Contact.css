@@ -1,0 +1,56 @@
+.contact {
+  padding: 20px;
+}
+
+.contact-info {
+  width: 80%;
+  padding: 40px;
+  font-size: 1em;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+.password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.password-input {
+  padding: 10px;
+  border: 1px solid #52ABA6;
+  background-color: #67CBA1;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.password-input:focus {
+  outline: none;
+}
+
+.password-submit {
+  background-color: #52ABA6;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2em;
+}
+
+.password-submit:hover {
+  background-color: #67CBA1;
+}
+
+.error-message {
+  color: red;
+}
