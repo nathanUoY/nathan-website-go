@@ -13,7 +13,7 @@ function Blog() {
   const [editingPostId, setEditingPostId] = useState(null);
 
   useEffect(() => {
-    fetch('http://16.171.142.4:5000/blog-api/posts')
+    fetch('https://16.171.142.4:5000/blog-api/posts')
       .then(response => response.json())
       .then(data => setPosts(data))
       .catch(error => console.error('Error fetching posts:', error));
@@ -54,7 +54,7 @@ function Blog() {
   const handleCreatePost = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://16.171.142.4:5000/blog-api/posts', {
+      const response = await fetch('https://16.171.142.4:5000/blog-api/posts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newPost),
@@ -72,7 +72,7 @@ function Blog() {
   const handleEditPost = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://16.171.142.4:5000/blog-api/posts/${editingPostId}`, {
+      const response = await fetch(`https://16.171.142.4:5000/blog-api/posts/${editingPostId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newPost),
@@ -89,7 +89,7 @@ function Blog() {
 
   const handleDeletePost = async (postId) => {
     try {
-      await fetch(`http://16.171.142.4:5000/blog-api/posts/${postId}`, {
+      await fetch(`https://16.171.142.4:5000/blog-api/posts/${postId}`, {
         method: 'DELETE',
       });
       setPosts(posts.filter(post => post._id !== postId));

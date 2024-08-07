@@ -109,5 +109,5 @@ app.delete('/blog-api/posts/:id', async (req, res) => {
 });
 
 app.listen(port, '0.0.0.0', () => {
-  console.log(`Server is running on http://16.171.142.4:${port}`);
+  console.log(`Server is running on https://16.171.142.4:${port}`);
 });
