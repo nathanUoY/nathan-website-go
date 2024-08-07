@@ -82,6 +82,22 @@ app.post('/blog-api/posts', async (req, res) => {
   }
 });
 
+app.put('/blog-api/posts/:id', async (req, res) => {
+  try {
+    const updatedPost = await Blog.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true } // Return the updated document
+    );
+    if (!updatedPost) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+    res.json(updatedPost);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
 app.delete('/blog-api/posts/:id', async (req, res) => {
   try {
     const deletedPost = await Blog.findByIdAndDelete(req.params.id);
