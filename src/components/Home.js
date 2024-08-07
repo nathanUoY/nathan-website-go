@@ -42,7 +42,7 @@ function Home() {
   ];
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/modules')
+    fetch('http://16.171.142.4:5000/api/modules')
       .then(response => response.json())
       .then(data => {
         const initialVisibility = data.reduce((acc, module) => {
