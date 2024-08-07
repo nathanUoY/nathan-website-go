@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/nathan-website-go/static/css/main.b10c55ab.css",
+    "main.js": "/nathan-website-go/static/js/main.fe5ce187.js",
+    "static/js/453.195b869a.chunk.js": "/nathan-website-go/static/js/453.195b869a.chunk.js",
+    "static/media/profile.jpeg": "/nathan-website-go/static/media/profile.707fc5d116dbc17bd99d.jpeg",
+    "index.html": "/nathan-website-go/index.html",
+    "main.b10c55ab.css.map": "/nathan-website-go/static/css/main.b10c55ab.css.map",
+    "main.fe5ce187.js.map": "/nathan-website-go/static/js/main.fe5ce187.js.map",
+    "453.195b869a.chunk.js.map": "/nathan-website-go/static/js/453.195b869a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b10c55ab.css",
+    "static/js/main.fe5ce187.js"
+  ]
+}
