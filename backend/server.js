@@ -9,6 +9,7 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
+//mongodb+srv://nattyb7702:JzCKXdV0Y2URGjb2@moduledata.kk4pgdt.mongodb.net/?retryWrites=true&w=majority&appName=moduleData
 mongoose.connect("mongodb+srv://nattyb7702:JzCKXdV0Y2URGjb2@moduledata.kk4pgdt.mongodb.net/test", {
 }).then(() => {
   console.log('Connected to MongoDB');

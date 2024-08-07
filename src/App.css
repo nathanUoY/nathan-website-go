@@ -13,7 +13,7 @@
 }
 
 .App-header, .App-footer {
-  background-color: #87a1b8; /* Dark Gray */
+  background-color: #07a0ec45; /* Dark Gray */
   padding: 20px;
   height: 60px;
   display: flex;
@@ -32,7 +32,7 @@
   color: transparent;
   -webkit-text-stroke: 1px black; /* Outline text with black color */
   margin: 0;
-  position: absolute;
+  position: sticky;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -41,12 +41,12 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
   gap: 20px;
+
 }
 
 .App-nav a {
-  color: #F9F871; /* Light Yellow */
+  color: #000000; /* Light Yellow */
   text-decoration: none;
   font-size: 1.2em;
   display: flex;

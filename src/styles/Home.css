@@ -1,8 +1,122 @@
 .home {
   padding: 20px;
+  position: relative;
+}
+
+.floating-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 5px solid rgb(153, 237, 7);
+  margin: 40px auto 20px; /* Adds margin at the top */
+  padding: 60px 320px; /* Adjusted padding */
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.profile-heading {
+  font-size: 2em;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 60px; /* Adds space between the heading and the image */
+}
+
+.profile-image-container {
+  position: relative;
+  width: fit-content;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.profile-image {
+  max-width: 400px;
+  animation: rotate 10s infinite linear;
+  transform-style: preserve-3d;
+}
+
+.profile-image::before,
+.profile-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.profile-image::before {
+  transform: rotateY(90deg) translateZ(15px); /* Simulates the left side thickness */
+}
+
+.profile-image::after {
+  transform: rotateY(-90deg) translateZ(15px); /* Simulates the right side thickness */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.about-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-card img {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.section-github {
+  background-color: #678a92; /* Teal */
+  color: #0033A0; /* Dark Blue */
+}
+
+.section-york {
+  background-color: #67CBA1; /* Mint Green */
+  color: #FFFFFF; /* White */
+}
+
+.section-maths {
+  background-color: #52ABA6; /* Light Blue */
+  color: #0033A0; /* Dark Blue */
+}
+
+.section-esimgo {
+  background-color: #A5E68A; /* Light Green */
+  color: #FFFFFF; /* White */
 }
 
 .module-buttons {
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
